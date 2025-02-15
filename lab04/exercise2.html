@@ -8,7 +8,65 @@
 <body>
     <h1>JavaScript Lab</h1>
     <script>
-        // Write your JavaScript code here
+        //-------Declaring Functions--------------//
+        // function add(a, b ){
+        //     return a+b;
+        // }
+        // function subtract(a, b){
+        //     return a-b;
+        // }
+
+        // console.log("2+1 =  ", add(2,1));
+        // console.log("7-5 = ",subtract(7,5) );
+
+
+        //-------- Using Defualt Parameters -----------//
+
+        // function add(a=1, b=2){
+        //     return a+b;
+        // }
+        // function subtract(a=1, b=2){
+        //     return a-b;
+        // }
+
+        // console.log("add(2,1) =  ", add(2,1));
+        // console.log("add(2) =  ", add(2));
+        // console.log("subtract(7,5) = ",subtract(7,5) );
+        // console.log("subtract(7) = ",subtract(7) );
+
+        //-----------Implementing Arrow Functions-------------//
+        let add = (a=0, b=0) => { return a+b}; 
+        let subtract = (a=0, b=0) => {return a-b}; 
+
+        let multiply = (a=0, b=0) => {return a*b}; 
+        let divide = (a=0, b=0) => {
+            if (b==0){
+                console.log("Cant divide by 0.")
+            }
+            else return a / b; 
+        }
+
+        console.log("\n Implementing Arrow Functions: ");
+        console.log("add(5,3)) =  ", add(5,3));
+        console.log("subtract(5,3) = ", subtract(5,3));
+        console.log("multiply(5,3) = ", multiply(5,3));
+        console.log("divide(15,3) = ", divide(15,3));
+        console.log("divide(15) = ", divide(15));
+        
+        //---------Understanding Callback Functions -----------//
+        function calculator(a, b, callback){
+            return callback(a, b); 
+        }
+
+        console.log("\n Understanding Callback Functions: ");
+        console.log("calculator(6, 4, add) = ", calculator(6, 4, add));
+        console.log("calculator(7, 3, multiply) = ", calculator(7, 3, multiply));
+        
+
+        
+
+
+
     </script>
 </body>
 

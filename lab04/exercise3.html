@@ -8,7 +8,61 @@
 <body>
     <h1>JavaScript Lab</h1>
     <script>
-        // Write your JavaScript code here
+
+        //----------- Arrays and Basic Methods ----------------------//
+        let classRoster = ['Alice', 'Tom', 'Charlie', 'Diana', 'Evan']; 
+        
+        console.log(classRoster.toString()); 
+        console.log('classRoster: ', classRoster); 
+        
+        classRoster.push('Fiona', 'Nancy'); 
+        classRoster.shift(); 
+        
+        console.log(classRoster);
+        console.log("Total num students: ", classRoster.lenght);
+
+
+
+        
+        //-------------- Objects with Nested Structures -------------//
+        let classInfo = {
+            className: 'ENSF381: Full-Stack Web Development',
+            instructor: 'Dr. Smith',
+            students: classRoster,
+            details: {
+                semester: 'Winter',
+                year: 2025
+            }
+        };
+
+        classInfo.schedule = ['Monday', 'Wednesday', 'Friday'];
+        classInfo.instructor = 'Dr. Deb';
+
+        console.log('className: ', classInfo.className);
+        console.log('instructor: ', classInfo.instructor);
+        console.log('students: ', classInfo.students);
+        console.log('semester: ', classInfo.details.semester); 
+        console.log('classInfo: ', classInfo);
+
+        let {className, students} = classInfo; 
+        console.log('className: ', className);
+        console.log('students: ', students);
+
+        let { semester, year } = classInfo.details;
+        console.log('semester: ', semester);
+        console.log('year: ', year);
+
+
+        let [student1, student2, ...remainingStudents] = students;
+        console.log('student1: ' ,student1);
+        console.log('student2: ', student2);
+        console.log('remainingStudents: ', remainingStudents);
+
+
+
+
+
+
     </script>
 </body>
 
