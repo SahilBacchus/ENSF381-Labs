@@ -8,7 +8,37 @@
 <body>
     <h1>JavaScript Lab</h1>
     <script>
-        // Write your JavaScript code here
+        // Variable Declaration
+        let var1 = 1;
+        let var2 = 2;
+        const var3 = 3;
+
+        var2 = 700;
+        //var3 = 700;
+
+        // String Ops
+        let string1 = "Hello, World!";
+        let string2 = "JavaScript is fun!";
+
+        console.log(string1.length);
+        let result = string1 + string2;
+        console.log(result);
+        console.log(string2.replace("fun", "awesome"));
+
+        // String Templates
+        let name = "Alice";
+        let age = 25;
+        let template = `My name is ${name} and I am ${age} years old`
+        console.log(template);
+
+        // Working with dates
+        let date = new Date();
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        console.log(date);
+        console.log("Year: " + date.getFullYear());
+        console.log(`Month: ${date.getMonth() + 1}`); // January is 0 so add 1
+        console.log(`Day: ${days[date.getDay()]}`);
+
     </script>
 </body>
 
