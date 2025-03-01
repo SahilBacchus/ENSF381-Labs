@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab5 - Exercise 1</title>
+  </head>
+  <body>
+    <input type="text" id="textInput" placeholder="Enter a user number(1-17)" />
+    <label id="textLabel"></label>
+    <button id="redButton">Red</button>
+    <button id="blueButton">Blue</button>
+    <button id="greenButton">Green</button>
+    <button id="orangeButton">Orange</button>
+    <button id="purpleButton">Purple</button>
+  </body>
+  <script type="text/javascript">
+    <!-- Your JavaScript code will go here -->
+
+    //1. Textbox to Label:
+    var textinput = document.getElementById('textInput');
+    textinput.addEventListener('keydown', function (event) {
+        if(event.keyCode == 13) {
+            
+            change_label(); 
+        }
+    });
+
+
+    async function change_label() {
+            var textLabel = document.getElementById('textLabel'); 
+            var textInput = document.getElementById('textInput');
+            data = await retrieveData();
+            console.log(data);
+            for(let i = 0; i < data.length; i++) {
+                if(textInput.value == data[i]["ID"]) {
+                    console.log(data[i]["ID"])
+                    var target = data[i]
+                    break;
+                }
+            }
+            console.log(target);
+            if(target) {
+                textLabel.innerHTML = `ID: ${target["ID"]}, Name: ${target["first_name"]}, Group:  ${target["user_group"]}`;
+            } else {
+                textLabel.innerHTML = "No users were found with the provided User_ID.";
+            }
+            textInput.value = ''; 
+    }
+
+    //2. Button Clicks:
+    var redButton = document.getElementById('redButton');
+    redButton.addEventListener('click', change_to_red); 
+
+    function change_to_red(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'red'; 
+    }
+    var blueButton = document.getElementById('blueButton');
+    blueButton.addEventListener('click', change_to_blue); 
+
+    function change_to_blue(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'blue'; 
+    }
+
+ 
+    var greenButton = document.getElementById('greenButton');
+    greenButton.addEventListener('click', change_to_green); 
+
+    function change_to_green(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'green'; 
+    }
+
+
+    var orangeButton = document.getElementById('orangeButton');
+    orangeButton.addEventListener('click', change_to_orange); 
+
+    function change_to_orange(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'orange'; 
+    }
+
+
+    var purpleButton = document.getElementById('purpleButton');
+    purpleButton.addEventListener('click', change_to_purple); 
+
+    function change_to_purple(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'purple'; 
+    }
+
+    async function retrieveData() {
+        response = await fetch("https://67c2040761d8935867e522f0.mockapi.io/users_api");
+        data = await response.json();
+        return data;
+    }
+
+
+  </script>
+</html>
