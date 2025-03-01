@@ -14,11 +14,69 @@
   </body>
   <script type="text/javascript">
     <!-- Your JavaScript code will go here -->
-    // let textinput = document.getElementById('textinput');
-    // textinput.addEventListener('keydown', change_label(event));
+
+    //1. Textbox to Label:
+    var textinput = document.getElementById('textInput');
+    textinput.addEventListener('keydown', function (event) {
+        if(event.keyCode == 13){
+            change_label(); 
+        }
+    });
 
 
-    // function change_label(event)
+    function change_label() {
+            var textLabel = document.getElementById('textLabel'); 
+            var textInput = document.getElementById('textInput');
+            textLabel.innerHTML = textInput.value; 
+            textInput.value = ''; 
+    }
+
+    //2. Button Clicks:
+    var redButton = document.getElementById('redButton');
+    redButton.addEventListener('click', change_to_red); 
+
+    function change_to_red(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'red'; 
+    }
+    var blueButton = document.getElementById('blueButton');
+    blueButton.addEventListener('click', change_to_blue); 
+
+    function change_to_blue(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'blue'; 
+    }
+
+ 
+    var greenButton = document.getElementById('greenButton');
+    greenButton.addEventListener('click', change_to_green); 
+
+    function change_to_green(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'green'; 
+    }
+
+
+    var orangeButton = document.getElementById('orangeButton');
+    orangeButton.addEventListener('click', change_to_orange); 
+
+    function change_to_orange(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'orange'; 
+    }
+
+
+    var purpleButton = document.getElementById('purpleButton');
+    purpleButton.addEventListener('click', change_to_purple); 
+
+    function change_to_purple(){
+        var textLabel = document.getElementById('textLabel'); 
+        textLabel.style.color = 'purple'; 
+    }
+
+
+
+
   </script>
 </html>
 
