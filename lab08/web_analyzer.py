@@ -62,11 +62,24 @@ print("-------------------------")
 #-------------------------------
 
 words = soup.get_text().split()
-words_count = [f"{word}={words.count(word)}" for word in words]
-words_count = list(set(words_count)) # Removes duplicates
-# print(words_count)
-#needs work....
+filtered_words = [word for word in words if word.isalpha()]
 
+word_freq = {}  # Dictionary to store word and their occrances
+
+for word in filtered_words:
+    if word in word_freq:
+        word_freq[word] += 1
+    else:
+        word_freq[word] = 1
+
+top_words = sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+top_5 = top_words[:5]
+
+print("-------------------------")
+print("Top 5 Most Frequent Words:")
+for word, count in top_5:
+    print(f"{word}: {count} times")
+print("-------------------------")
 
 
 
