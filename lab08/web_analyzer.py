@@ -77,12 +77,20 @@ words_count = list(set(words_count)) # Removes duplicates
 
 paragraphs = soup.find_all("p")
 longest_paragraph = ""
+max_words = 0
 for p in paragraphs:
-    num_words = len(p.get_text().split())
-    if p is not None and num_words > 5: 
-        if num_words > len(longest_paragraph.split()):
-            longest_paragraph = p
-# not working... 
+    paragraph_text = p.get_text().strip()
+    word_count = len(paragraph_text.split())
+    if word_count >= 5 and word_count > max_words:
+        longest_paragraph = paragraph_text
+        max_words = word_count
+
+
+print("-------------------------")
+print("Longest Paragraph:")
+print(longest_paragraph)
+print(f"Number of words: {max_words}")
+print("-------------------------")
 
 #---------------------------------
 # 7. Visualizing Results
