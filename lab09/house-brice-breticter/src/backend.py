@@ -1,6 +1,10 @@
 # Import the Flask class
-from flask import Flask, request
-from flask import CORS
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import pandas as pd
+import joblib
+
+
 # Create an instance of the Flask class
 app = Flask(__name__)
 CORS(app)
