@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./HousePricePredictor.css"; 
 
 const HousePricePredictor = () => {
   const [formData, setFormData] = useState({
@@ -53,64 +54,7 @@ const HousePricePredictor = () => {
     <div className="container">
       <style>
         {`
-          .container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 24px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          }
-
-          h1 {
-            text-align: center;
-          }
-
-          form {
-            display: flex;
-            flex-direction: column;
-          }
-
-          label {
-            margin-bottom: 8px;
-            text-align: left; 
-          }
-
-          input, select {
-            padding: 8px;
-            margin-bottom: 12px;
-            border: 1px solid lightgray;
-            border-radius: 4px;
-            width: 100%;
-          }
-
-          input[type="checkbox"] {
-            width: auto;
-          }
-
-          button {
-            background-color: #007BFF;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-          }
-
-          button:hover {
-            background-color: #0056b3;
-          }
-
-          .result {
-            margin-top: 16px;
-            background-color: #DFF0D8;
-            border: 1px solid #3C763D;
-            padding: 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-align: center;
-          }
+         
         `}
       </style>
       
