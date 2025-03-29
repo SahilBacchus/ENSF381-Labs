@@ -26,9 +26,12 @@ db = {
 @app.route('/validate_login', methods=['POST'])
 def login():
     data = request.get_json()
-    if db[data['username']] == data['password']:
-        return {'success': True, 'msg': 'Login successful'}
-    else:
+    try:
+        if db[data['username']] == data['password']:
+            return {'success': True, 'msg': 'Login successful'}
+        else:
+            return {'success': False, 'msg': 'Invalid credentinals'}
+    except:
         return {'success': False, 'msg': 'Invalid credentinals'}
 
 

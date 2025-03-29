@@ -15,15 +15,17 @@ function Login() {
       },
       body: JSON.stringify({'username':username, 'password':password}),
     })
-    .then(response => {
-      if (response.ok) {
-        navigate("/predict")
+    .then(async function(response) {
+      const data = await response.json();
+      console.log(data['success']);
+      if (data['success']) {
+        navigate("/predict");
       } else {
-        throw new Error('Authentication failed');
+        setMessage('Authentication failed. Incorrect username or password YO.');
       }
     })
-    .then(data => setMessage(data.message))
-    .catch(error => setMessage('Authentication failed. Incorrect username or password.'));};
+  }
+    
 
     return (
       <>
